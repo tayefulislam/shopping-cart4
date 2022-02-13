@@ -1,5 +1,5 @@
 // // common function
-let subTotal =0;
+let subTotal = 0;
 // // Quantity
 
 
@@ -13,18 +13,15 @@ function updateProductQuantity(product, price, isIncresing) {
 
     if (isIncresing) {
         productQuantity.value = totalProduct + 1;
-    
+
     }
     else if (productQuantity.value > 0) {
 
         productQuantity.value = totalProduct - 1;
-        
 
-     
     }
     totalProduct = productQuantity.value;
 
-   
 
 
     //Update quantity total 
@@ -32,33 +29,33 @@ function updateProductQuantity(product, price, isIncresing) {
     let getProductPrice = document.getElementById(product + '-price');
     getProductPrice.innerText = totalProduct * price;
 
-calculateTotal()
+    calculateTotal()
 
 }
 
-function getInputValue(product){
+function getInputValue(product) {
 
 
-    let inputValue = document.getElementById(product +'-total').value;
+    let inputValue = document.getElementById(product + '-total').value;
     return inputValue;
 
 }
 
 
-function calculateTotal(){
+function calculateTotal() {
 
     let totalPhone = getInputValue('phone') * 1219;
     let totalCase = getInputValue('case') * 59
-     let subTotal = totalPhone + totalCase;
+    let subTotal = totalPhone + totalCase;
 
-     let tax = subTotal /10;
+    let tax = subTotal / 10;
 
-     let total = subTotal + tax;
-     console.log(total);
+    let total = subTotal + tax;
+    console.log(total);
 
-     document.getElementById('subtotal').innerText = subTotal;
-     document.getElementById('tax').innerText = tax;
-     document.getElementById('total').innerText =total;
+    document.getElementById('subtotal').innerText = subTotal;
+    document.getElementById('tax').innerText = tax;
+    document.getElementById('total').innerText = total;
 
 }
 
@@ -67,17 +64,17 @@ function calculateTotal(){
 // phone total
 
 // click button : increasing product quantity
-document.getElementById('phone-plus').addEventListener('click',function(){
+document.getElementById('phone-plus').addEventListener('click', function () {
 
-    updateProductQuantity('phone',1219,true);
+    updateProductQuantity('phone', 1219, true);
 
 })
 
 // click button: decreesing product quantity
 
-document.getElementById('phone-minus').addEventListener('click',function(){
+document.getElementById('phone-minus').addEventListener('click', function () {
 
-    updateProductQuantity('phone',1219,false);
+    updateProductQuantity('phone', 1219, false);
 })
 
 
